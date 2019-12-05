@@ -114,6 +114,7 @@
             this.varosLista.Name = "varosLista";
             this.varosLista.Size = new System.Drawing.Size(143, 95);
             this.varosLista.TabIndex = 6;
+            this.varosLista.SelectedIndexChanged += new System.EventHandler(this.varosLista_SelectedIndexChanged);
             // 
             // label3
             // 

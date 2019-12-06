@@ -160,6 +160,11 @@
             // nudAr
             // 
             this.nudAr.Location = new System.Drawing.Point(363, 195);
+            this.nudAr.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.nudAr.Name = "nudAr";
             this.nudAr.Size = new System.Drawing.Size(99, 20);
             this.nudAr.TabIndex = 12;
@@ -235,6 +240,11 @@
             // nudujlakossag
             // 
             this.nudujlakossag.Location = new System.Drawing.Point(363, 345);
+            this.nudujlakossag.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
             this.nudujlakossag.Name = "nudujlakossag";
             this.nudujlakossag.Size = new System.Drawing.Size(100, 20);
             this.nudujlakossag.TabIndex = 21;
@@ -242,6 +252,11 @@
             // lar
             // 
             this.lar.Location = new System.Drawing.Point(588, 183);
+            this.lar.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
             this.lar.Name = "lar";
             this.lar.Size = new System.Drawing.Size(100, 20);
             this.lar.TabIndex = 22;

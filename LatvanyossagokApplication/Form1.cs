@@ -145,8 +145,7 @@ namespace LatvanyossagokApplication
         private void btnDelete_Click(object sender, EventArgs e)
         {
             var cmd = conn.CreateCommand();
-            cmd.CommandText = @"DELETE FROM varosok WHERE id = @id;
-                                DELETE FROM latvanyossagok WHERE varos_id = @id";
+            cmd.CommandText = @"DELETE FROM latvanyossagok WHERE varos_id = @id;";
 
             var varos = (Varos)varosLista.SelectedItem;
             cmd.Parameters.AddWithValue("@id", varos.Id);

@@ -37,6 +37,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.latvanyossagok = new System.Windows.Forms.ListBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnDelVaros = new System.Windows.Forms.Button();
             this.tbLatvanyossagNev = new System.Windows.Forms.TextBox();
             this.tbLeiras = new System.Windows.Forms.TextBox();
             this.nudAr = new System.Windows.Forms.NumericUpDown();
@@ -44,25 +49,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnLatvanyossagFelv = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.vnev = new System.Windows.Forms.TextBox();
-            this.lnev = new System.Windows.Forms.TextBox();
-            this.lleir = new System.Windows.Forms.TextBox();
-            this.nudujlakossag = new System.Windows.Forms.NumericUpDown();
-            this.lar = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.btnChange = new System.Windows.Forms.Button();
-            this.latvanyossagok = new System.Windows.Forms.ListBox();
-            this.btnChangeVaros = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
+            this.btnvarosvalzotatas = new System.Windows.Forms.Button();
+            this.btnlatvvaltoztatas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ndLakossagSzama)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAr)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudujlakossag)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lar)).BeginInit();
             this.SuspendLayout();
             // 
             // tbVarosNev
@@ -93,6 +83,11 @@
             // ndLakossagSzama
             // 
             this.ndLakossagSzama.Location = new System.Drawing.Point(102, 73);
+            this.ndLakossagSzama.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
             this.ndLakossagSzama.Name = "ndLakossagSzama";
             this.ndLakossagSzama.Size = new System.Drawing.Size(100, 20);
             this.ndLakossagSzama.TabIndex = 4;
@@ -143,23 +138,69 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Város név";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(614, 192);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 17;
+            this.btnDelete.Text = "Törlés";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // latvanyossagok
+            // 
+            this.latvanyossagok.FormattingEnabled = true;
+            this.latvanyossagok.Location = new System.Drawing.Point(533, 37);
+            this.latvanyossagok.Name = "latvanyossagok";
+            this.latvanyossagok.Size = new System.Drawing.Size(155, 95);
+            this.latvanyossagok.TabIndex = 29;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(569, 163);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(119, 13);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Látványosság kijelölése";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(259, 168);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(63, 13);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Város kijelöl";
+            // 
+            // btnDelVaros
+            // 
+            this.btnDelVaros.Location = new System.Drawing.Point(386, 163);
+            this.btnDelVaros.Name = "btnDelVaros";
+            this.btnDelVaros.Size = new System.Drawing.Size(75, 23);
+            this.btnDelVaros.TabIndex = 33;
+            this.btnDelVaros.Text = "Töröl";
+            this.btnDelVaros.UseVisualStyleBackColor = true;
+            this.btnDelVaros.Click += new System.EventHandler(this.btnDelVaros_Click);
+            // 
             // tbLatvanyossagNev
             // 
-            this.tbLatvanyossagNev.Location = new System.Drawing.Point(363, 157);
+            this.tbLatvanyossagNev.Location = new System.Drawing.Point(363, 196);
             this.tbLatvanyossagNev.Name = "tbLatvanyossagNev";
             this.tbLatvanyossagNev.Size = new System.Drawing.Size(100, 20);
             this.tbLatvanyossagNev.TabIndex = 10;
             // 
             // tbLeiras
             // 
-            this.tbLeiras.Location = new System.Drawing.Point(363, 230);
+            this.tbLeiras.Location = new System.Drawing.Point(363, 269);
             this.tbLeiras.Name = "tbLeiras";
             this.tbLeiras.Size = new System.Drawing.Size(100, 20);
             this.tbLeiras.TabIndex = 11;
             // 
             // nudAr
             // 
-            this.nudAr.Location = new System.Drawing.Point(363, 195);
+            this.nudAr.Location = new System.Drawing.Point(363, 234);
             this.nudAr.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -172,7 +213,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(262, 157);
+            this.label6.Location = new System.Drawing.Point(262, 196);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 13);
             this.label6.TabIndex = 13;
@@ -181,7 +222,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(262, 195);
+            this.label7.Location = new System.Drawing.Point(262, 234);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 14;
@@ -190,7 +231,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(265, 230);
+            this.label8.Location = new System.Drawing.Point(265, 269);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 15;
@@ -198,7 +239,7 @@
             // 
             // btnLatvanyossagFelv
             // 
-            this.btnLatvanyossagFelv.Location = new System.Drawing.Point(344, 269);
+            this.btnLatvanyossagFelv.Location = new System.Drawing.Point(344, 308);
             this.btnLatvanyossagFelv.Name = "btnLatvanyossagFelv";
             this.btnLatvanyossagFelv.Size = new System.Drawing.Size(119, 23);
             this.btnLatvanyossagFelv.TabIndex = 16;
@@ -206,162 +247,37 @@
             this.btnLatvanyossagFelv.UseVisualStyleBackColor = true;
             this.btnLatvanyossagFelv.Click += new System.EventHandler(this.btnLatvanyossagFelv_Click);
             // 
-            // btnDelete
+            // btnvarosvalzotatas
             // 
-            this.btnDelete.Location = new System.Drawing.Point(613, 319);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 17;
-            this.btnDelete.Text = "Törlés";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnvarosvalzotatas.Location = new System.Drawing.Point(388, 349);
+            this.btnvarosvalzotatas.Name = "btnvarosvalzotatas";
+            this.btnvarosvalzotatas.Size = new System.Drawing.Size(75, 23);
+            this.btnvarosvalzotatas.TabIndex = 34;
+            this.btnvarosvalzotatas.Text = "Változtatás";
+            this.btnvarosvalzotatas.UseVisualStyleBackColor = true;
+            this.btnvarosvalzotatas.Click += new System.EventHandler(this.btnvarosvalzotatas_Click);
             // 
-            // vnev
+            // btnlatvvaltoztatas
             // 
-            this.vnev.Location = new System.Drawing.Point(363, 310);
-            this.vnev.Name = "vnev";
-            this.vnev.Size = new System.Drawing.Size(100, 20);
-            this.vnev.TabIndex = 18;
-            // 
-            // lnev
-            // 
-            this.lnev.Location = new System.Drawing.Point(588, 150);
-            this.lnev.Name = "lnev";
-            this.lnev.Size = new System.Drawing.Size(100, 20);
-            this.lnev.TabIndex = 19;
-            // 
-            // lleir
-            // 
-            this.lleir.Location = new System.Drawing.Point(588, 220);
-            this.lleir.Name = "lleir";
-            this.lleir.Size = new System.Drawing.Size(100, 20);
-            this.lleir.TabIndex = 20;
-            // 
-            // nudujlakossag
-            // 
-            this.nudujlakossag.Location = new System.Drawing.Point(363, 345);
-            this.nudujlakossag.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.nudujlakossag.Name = "nudujlakossag";
-            this.nudujlakossag.Size = new System.Drawing.Size(100, 20);
-            this.nudujlakossag.TabIndex = 21;
-            // 
-            // lar
-            // 
-            this.lar.Location = new System.Drawing.Point(588, 183);
-            this.lar.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.lar.Name = "lar";
-            this.lar.Size = new System.Drawing.Size(100, 20);
-            this.lar.TabIndex = 22;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(271, 310);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 13);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Város Név";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(274, 345);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 13);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Lakosság";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(502, 150);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 13);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "Látványosság";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(505, 183);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(17, 13);
-            this.label12.TabIndex = 26;
-            this.label12.Text = "Ár";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(505, 220);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 13);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "Leírás";
-            // 
-            // btnChange
-            // 
-            this.btnChange.Location = new System.Drawing.Point(612, 251);
-            this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(75, 23);
-            this.btnChange.TabIndex = 28;
-            this.btnChange.Text = "Változtat";
-            this.btnChange.UseVisualStyleBackColor = true;
-            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
-            // 
-            // latvanyossagok
-            // 
-            this.latvanyossagok.FormattingEnabled = true;
-            this.latvanyossagok.Location = new System.Drawing.Point(533, 37);
-            this.latvanyossagok.Name = "latvanyossagok";
-            this.latvanyossagok.Size = new System.Drawing.Size(155, 95);
-            this.latvanyossagok.TabIndex = 29;
-            // 
-            // btnChangeVaros
-            // 
-            this.btnChangeVaros.Location = new System.Drawing.Point(387, 383);
-            this.btnChangeVaros.Name = "btnChangeVaros";
-            this.btnChangeVaros.Size = new System.Drawing.Size(75, 23);
-            this.btnChangeVaros.TabIndex = 30;
-            this.btnChangeVaros.Text = "Változtat";
-            this.btnChangeVaros.UseVisualStyleBackColor = true;
-            this.btnChangeVaros.Click += new System.EventHandler(this.btnChangeVaros_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(568, 290);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(119, 13);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "Látványosság kijelölése";
+            this.btnlatvvaltoztatas.Location = new System.Drawing.Point(612, 230);
+            this.btnlatvvaltoztatas.Name = "btnlatvvaltoztatas";
+            this.btnlatvvaltoztatas.Size = new System.Drawing.Size(75, 23);
+            this.btnlatvvaltoztatas.TabIndex = 35;
+            this.btnlatvvaltoztatas.Text = "Változtatás";
+            this.btnlatvvaltoztatas.UseVisualStyleBackColor = true;
+            this.btnlatvvaltoztatas.Click += new System.EventHandler(this.btnlatvvaltoztatas_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 458);
+            this.Controls.Add(this.btnlatvvaltoztatas);
+            this.Controls.Add(this.btnvarosvalzotatas);
+            this.Controls.Add(this.btnDelVaros);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.btnChangeVaros);
             this.Controls.Add(this.latvanyossagok);
-            this.Controls.Add(this.btnChange);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.lar);
-            this.Controls.Add(this.nudujlakossag);
-            this.Controls.Add(this.lleir);
-            this.Controls.Add(this.lnev);
-            this.Controls.Add(this.vnev);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnLatvanyossagFelv);
             this.Controls.Add(this.label8);
@@ -383,8 +299,6 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.ndLakossagSzama)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAr)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudujlakossag)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,6 +315,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.ListBox latvanyossagok;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnDelVaros;
         private System.Windows.Forms.TextBox tbLatvanyossagNev;
         private System.Windows.Forms.TextBox tbLeiras;
         private System.Windows.Forms.NumericUpDown nudAr;
@@ -408,21 +327,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnLatvanyossagFelv;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.TextBox vnev;
-        private System.Windows.Forms.TextBox lnev;
-        private System.Windows.Forms.TextBox lleir;
-        private System.Windows.Forms.NumericUpDown nudujlakossag;
-        private System.Windows.Forms.NumericUpDown lar;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button btnChange;
-        private System.Windows.Forms.ListBox latvanyossagok;
-        private System.Windows.Forms.Button btnChangeVaros;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnvarosvalzotatas;
+        private System.Windows.Forms.Button btnlatvvaltoztatas;
     }
 }
 

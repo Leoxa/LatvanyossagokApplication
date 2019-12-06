@@ -156,51 +156,45 @@ namespace LatvanyossagokApplication
             Adatoklistazas();
         }
 
-        private void btnChange_Click(object sender, EventArgs e)
+
+        private void btnDelVaros_Click(object sender, EventArgs e)
         {
-            var cmd = conn.CreateCommand();
-            cmd.CommandText = @"UPDATE latvanyossagok
-                                SET
-                                    nev = @lnev,
-                                    ar = @ar,
-                                    leiras = @leir
-                                WHERE 
-                                    id = @id;";
-            
-            cmd.Parameters.AddWithValue("@lnev", lnev.Text);
-            cmd.Parameters.AddWithValue("@ar", lar.Text);
-            cmd.Parameters.AddWithValue("@leir", lleir.Text);
+            try
+            {
+                var cmd = conn.CreateCommand();
+                cmd.CommandText = @"DELETE FROM varosok WHERE id = @id;";
 
-            var latv = (Latvanyossagok)latvanyossagok.SelectedItem;
-            cmd.Parameters.AddWithValue("@id", latv.Id);
+                var varos = (Varos)varosLista.SelectedItem;
+                cmd.Parameters.AddWithValue("@id", varos.Id);
 
-            cmd.ExecuteNonQuery();
-
-            latvanyossagok.Items.Clear();
-            Adatoklistazas();
-        }
-
-        private void btnChangeVaros_Click(object sender, EventArgs e)
-        {
-            var cmd = conn.CreateCommand();
-            cmd.CommandText = @"UPDATE varosok
-                                SET
-                                    nev = @vnev, 
-                                    lakossag = @lakossag
-                                WHERE 
-                                    id = @vid;";
-
-            cmd.Parameters.AddWithValue("@vnev", vnev.Text);
-            cmd.Parameters.AddWithValue("@lakossag", nudujlakossag.Text);
-
-            var varos = (Varos)varosLista.SelectedItem;
-            cmd.Parameters.AddWithValue("@vid", varos.Id);
-
-            cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Nem lehet törölni! A városhoz tartozik látványosság!");
+            }
 
             varosLista.Items.Clear();
             Adatoklistazas();
         }
 
+        private void btnvarosvalzotatas_Click(object sender, EventArgs e)
+        {
+            if(varosLista.SelectedItem != null) { 
+            var varos = (Varos)varosLista.SelectedItem;
+            ModositasForm f3 = new ModositasForm(varos.Id, varos.Nev, varos.Lakossag);
+            f3.ShowDialog();}
+        }
+
+        private void btnlatvvaltoztatas_Click(object sender, EventArgs e)
+        {
+            if (latvanyossagok.SelectedItem !=null)
+            {
+                Latvanyossagok lat = (Latvanyossagok)latvanyossagok.SelectedItem;
+                Form2 f2 = new Form2(lat.Id, lat.Nev, lat.Leir, lat.Ar);
+                f2.ShowDialog();
+            }
+            
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace LatvanyossagokApplication
         {
             InitializeComponent();
 
-            conn = new MySqlConnection("server=localhost;Port=3306;Database=latvanyossagokdb;UId=root;Pwd=;");
+            conn = new MySqlConnection("server=localhost;Port=3307;Database=latvanyossagokdb;UId=root;Pwd=;");
             conn.Open();
 
 
@@ -71,7 +71,7 @@ namespace LatvanyossagokApplication
             latvanyossagok.Items.Clear();
 
             var command = conn.CreateCommand();
-            command.CommandText = @"SELECT nev, leiras, ar, varos_id 
+            command.CommandText = @"SELECT nev, leiras, ar, id, varos_id 
                                 FROM latvanyossagok
                                 WHERE varos_id = @id";
 
@@ -89,8 +89,9 @@ namespace LatvanyossagokApplication
                     var leiras = reader.GetString("leiras");
                     var ar = reader.GetInt32("ar");
                     var id = reader.GetInt32("id");
+                    var vid = reader.GetInt32("varos_id");
 
-                    var latvanyossag = new Latvanyossagok(nev, leiras, ar, id);
+                    var latvanyossag = new Latvanyossagok(nev, leiras, ar, id, vid);
                     latvanyossagok.Items.Add(latvanyossag);
                 }
             }

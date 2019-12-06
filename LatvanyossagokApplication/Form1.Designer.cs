@@ -208,7 +208,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(613, 383);
+            this.btnDelete.Location = new System.Drawing.Point(613, 319);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 17;
@@ -337,11 +337,11 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(612, 348);
+            this.label14.Location = new System.Drawing.Point(568, 290);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(80, 13);
+            this.label14.Size = new System.Drawing.Size(119, 13);
             this.label14.TabIndex = 31;
-            this.label14.Text = "Város kijelölése";
+            this.label14.Text = "Látványosság kijelölése";
             // 
             // Form1
             // 
